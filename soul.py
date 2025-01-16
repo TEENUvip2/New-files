@@ -7,7 +7,7 @@ from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 
 loop = asyncio.new_event_loop()
 
-TOKEN = "YOUR_BOT_TOKEN_HERE"  # Replace with your bot's token
+TOKEN = "7722715217:AAEaDInqxwIBg7DGMOQb77gudQHbfrsqqgw"  # Replace with your bot's token
 FORWARD_CHANNEL_ID = -1002220400423  # Replace with your channel ID
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
