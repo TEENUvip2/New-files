@@ -104,7 +104,7 @@ def handle_attack_command(message):
 
     bot.send_message(message.chat.id, "💣 अटैक शुरू करने के लिए तैयार?\n"
                                       "टारगेट IP, पोर्ट और समय (सेकंड में) भेजें।\n"
-                                      "उदाहरण: `167.67.25 6296 300` 🔥", parse_mode='Markdown')
+                                      "उदाहरण: `167.67.25 6296 120` 🔥", parse_mode='Markdown')
     bot.register_next_step_handler(message, process_attack_command)
 
 
@@ -120,8 +120,8 @@ def process_attack_command(message):
         if target_port in blocked_ports:
             bot.send_message(message.chat.id, f"🔒 पोर्ट {target_port} ब्लॉक कर दिया गया है।", parse_mode='Markdown')
             return
-        if duration > 300:
-            bot.send_message(message.chat.id, "⏳ अधिकतम समय 300 सेकंड है।", parse_mode='Markdown')
+        if duration > 120:
+            bot.send_message(message.chat.id, "⏳ अधिकतम समय 120 सेकंड है।", parse_mode='Markdown')
             return
 
         bot.attack_in_progress = True
@@ -174,3 +174,4 @@ def start_asyncio_thread():
 if __name__ == '__main__':
     Thread(target=start_asyncio_thread).start()
     bot.infinity_polling()
+    
